@@ -18,8 +18,9 @@ var now = new Date();
       <h2 class="govuk-heading-m">What to do next</h2>
       <div class="width" style="width: 90%;">
         <ol class="govuk-list govuk-list--number">
+        <li>Press the finish button below.</li>
         <li>Take a seat on the sofas.</li>
-      <li>Listen for someone to call your name.</li>
+        <li>Listen for someone to call your name.</li>
       </ol>
       </div>
       <div class="govuk-inset-text">
@@ -28,6 +29,7 @@ var now = new Date();
       
     </div>
     {% include "includes/next-customer-button.html" %}
+    <a href="/check-in/has-meeting/check-in-fail" class="govuk-button  govuk-button--warning">Fail screen</a>
   </div>
   <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
 {% endblock %}

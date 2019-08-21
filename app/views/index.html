@@ -13,123 +13,30 @@
     <h1 class="govuk-heading-xl">
       Check in for your job centre appointment prototype
     </h1>
-    <p>This is for testing only, do not rely on it if you want something real to happen.</p>
-    <p><a class="govuk-button" href="/check-in">Start - latest version (6.0)</a></p>
-    <h2 class="govuk-heading-m"><a href="/check-in">Version 6</a></h2>
-    <p>Hypotheses: people with duplicate initials need to be able to identify themselves.</p>
+    <p>This prototype and design is gospel and what the Data Driven Prototype should be based off.</p>
+    <p>Everything in this prototype has been tested and validated with users in a Jobcentre.</p>
+    <p><a class="govuk-button" href="/check-in">version: gospel</a></p>
 
     
   </details>
-  <h2 class="govuk-heading-m"><a href="/check-in_v04">Version 5</a></h2>
-  <p>Hypotheses: Providing the user with a selection of names is the least laborious experience for them to identify themselves if their initials match that of anothers.</p>
+  <p>List of all the ideas that have been validated in this prototype:</p>
   <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Version details: 5.0
+      Ideas validated
     </span>
   </summary>
   <div class="govuk-details__text">
-  <h3 class="govuk-heading-m">5.0</h3>
   <ul class="govuk-list govuk-list--bullet">
-    <li>Switches name question back to first name then surname</li>
-    <li>Adds a cognitive speed bump into surname question</li>
-    <li>Adds a confirmation screen for claimants to check the details they inputted before submitting</li>
-    <li>adds a third name question for duplications, asking to pick their name from 12.</li>
-    <li>turns back and start into text links again to the top of the screen</li>
-    <li>removed early fuctionality and provided SDC prompt on success page instead</li>
+    <li>Order of questions; first name, last name, appointment time</li>
+    <li>Addition of a cognitive speed bump into surname question</li>
+    <li>Position of back and start again links</li>
+    <li>Success message, with early prompt for happy path</li>
+    <li>Failed to check in message for unhappy paths</li>
   </ul>
   </div>
   </details>  
   </details>
-  <h2 class="govuk-heading-m"><a href="/check-in_v04">Version 4</a></h2>
-  <p>Hypotheses: if we give specific contextual instructions to the user it will enable them to take appropriate action in context.</p>
-  <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Version details: 4.1, 4.0
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <h3 class="govuk-heading-m">4.1</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>changes end of transaction interaction to 'finish'</li>
-      <li>iterates start again design (some users hit it 'cos it was green)</li>
-      <li>switches</li>
-    </ul>
-  <h3 class="govuk-heading-m">4.0</h3>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>adds content relating to Park Place (site of user research)</li>
-    <li>removes birth date question sequence</li>
-    <li>adds question on work coach name</li>
-  </ul>
-  </div>
-  </details>
-  <h2><a href="/check-in_v03">Version 3</a></h2>
-  <p>Hypotheses: people can complete a journey giving accurate information, including recognising and correcting mistakes</p>
-  <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Version details: 3.1, 3.0
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <h3 class="govuk-heading-m">3.1</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>changes interaction to "don't know" on times rather than not sure</li>
-        <li>iterates on clear for next customer at end of journey</li>
-        <li>adds superscriptions to dates</li>
-        <li>iterates design of start again function</li>
-      </ul>
-    <h3 class="govuk-heading-m">3.0</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>adds option to allow continuing if meeting time not known</li>
-      <li>adds start again on every page to enable correction</li>
-    </ul>
-  </div>
-</details>
-<h2><a href="/check-in_v02">Version 2</a></h2>
-<p>Hypotheses: people recognise what the device is for and can use the device to answer simple questions.</p>
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-  <span class="govuk-details__summary-text">
-    Version details 2.1, 2.0
-  </span>
-</summary><div class="govuk-details__text">
-  <h3 class="govuk-heading-m">Version 2.1</h3>
-<ul class="govuk-list govuk-list--bullet">
-  <li>automates times and increments for appointments</li>
-  <li>adds before and after times to meeting time display</li>
-</ul>
-  <h3 class="govuk-heading-m">Version 2.0</h3>
-  <p>Can user physcially interact with the device.</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>styles radios and labels to look like grid</li>
-    <li>fires interactions on labels not radios</li>
-  </ul>
-</div>
-</details>
-
-
-
-    <h2><a href="/check-in_v0101">Version 1</a></h2>
-    <p>Proof of concept</p>
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Versions 1.1, 1.0
-      </span>
-    </summary><div class="govuk-details__text">
-      <h3 class="govuk-heading-m">Version 1.1</h3>
-      <p>Main updates</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>submits on change to radios rather than having to press continue</li>
-          <li>matches input against a static list of meeting data held as a Javascript array in the final page</li>
-          <li>changes output based on if meeting is found or not</li>
-        </ul>
-        <h3 class="govuk-heading-m">Version 1.0</h3>
-        <p>Takes a user's initial first letter of first and last name and time of appointment as radio default.</p>
-    </div>
-    </details>
 
 </div>
 
