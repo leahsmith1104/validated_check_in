@@ -1,0 +1,30 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  General welcome
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Welcome to Morley Jobcentre
+      </h1>
+      <p>You can use our public computers to help you look for
+        a job or check your Universal Credit account.</p>
+        <p>Public computers are located:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>on the right of the main entrance as you walk in.</li>
+          </ul>
+<p>If you need to talk to someone then take a seat on the blue sofas to your right and a staff member
+  will come to you when they can.</p>
+
+  <form class="form" action="/check-in" method="post">
+<button class="govuk-button">Next customer</button>
+</form>
+    </div>
+  </div>
+
+{% endblock %}

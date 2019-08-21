@@ -1,0 +1,241 @@
+$radioFontColor: #ffffff;
+$radioBackgroundColor: #000000;
+$radioBorderColor: #000000;
+
+sup {
+  font-size: 24px;
+}
+
+//gov dark green: #00823b
+//gov light green: #85994B
+
+// custom column layout for 8 items in a row - doesn't exist in gov
+
+.width {
+  width: 60%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.govuk-grid-column-full {
+  float: none!important;
+  text-align: center;
+}
+
+.govuk-grid-column-one-eigth {
+    width: 12.5%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+.govuk-back-link {
+  font-size: 22px;
+  padding-left: 18px;
+  margin: 0;
+
+  &::before {
+    border-width: 8px 12px 8px 0;
+  }
+}
+
+.buttons {
+  width:100%;
+  display: inline-block!important;
+  margin-bottom: 30px;
+}
+
+.text-link {
+  display: inline-block;
+  width: 49%;
+
+}
+
+.text-link--right {
+  text-align: right;
+  display: inline-block;
+  width: 48%;
+}
+
+.text-link--left {
+  text-align: left;
+  display: inline-block;
+  width: 48%;
+}
+
+.no-arrow {
+  padding-left: 0;
+
+  &::before {
+    display: none;
+    //border-width: 10px 14px 10px 0;
+  }
+}
+
+.fail {
+  font-size: 16px!important;
+  margin-top: 100px!important;
+}
+
+//button
+
+.govuk-button {
+  font-size: 24px!important;
+  padding: 14px;
+  text-align: center;
+  width: 200px;
+  margin: 20px 20px 0 0!important;
+
+}
+
+
+.check-in-start-again {
+  position: absolute;
+  bottom: 40px;
+  left: 40%;
+  background: #000;
+  border-radius: 15px;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 2.3rem;
+
+  &:hover {
+    border:2px solid #85994B;
+    background: #85994B;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+}
+
+//hint text below header
+.heading-withhint {
+  margin-bottom: 10px;
+}
+
+.headerhint {
+  color: #6f777b;
+  display: block;
+  margin-bottom: 20px;
+}
+
+// hidden
+
+.fade, .fade-slower {
+  display: none;
+}
+
+// overwrite gov form-group to centre forms on check-in
+
+.check-in-form-group {
+  text-align:center;
+}
+
+// overwrite gov legends to remove margin from bottom
+
+.govuk-fieldset__legend--l, .govuk-fieldset__legend {
+  margin-bottom: 0;
+}
+
+// custom radios
+
+.check-in-radios--invisible {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+  input {
+    display: none;
+  }
+
+  //Items
+
+  .check-in-radios__item {
+    text-align: center;
+    min-height: 0;
+    display: inline-block;
+
+  }
+  .check-in-radios__item:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  //Labels
+
+  .check-in-radios__label {
+    float: left;
+    text-align: center;
+    color: $radioFontColor;
+    background-color: $radioBackgroundColor;
+    border: 2px solid $radioBorderColor;
+    font-weight: bold;
+    font-size: 2.3rem;
+    width: 100%;
+    padding: 30px 0px;
+    margin-bottom: 32px;
+    border-radius: 15px;
+  }
+
+}
+input[type="radio"]:checked+label, input[type="radio"]:hover+label {
+  color: #ffffff;
+  border: 2px solid #85994B;
+  background: #85994B;
+}
+// size switches for labels
+
+.govuk-grid-column-one-eigth .check-in-radios__label {
+  padding: 20px 0px;
+}
+
+// color switches for radios
+.check-in-radios--invisible.green {
+.check-in-radios__label {
+  color: #ffffff;
+  background: #00823b;
+  border: 2px solid #00823b;
+  background: #00823b;
+}
+input[type="radio"]:checked+label, input[type="radio"]:hover+label {
+  color: #000000;
+  border: 2px solid #00823b;
+  background: #ffffff;
+}
+}
+.check-in-radios--invisible.white {
+.check-in-radios__label {
+  color: #000000;
+  border: 2px solid #000000;
+  background: #ffffff;
+}
+input[type="radio"]:checked+label, input[type="radio"]:hover+label {
+  color: #ffffff;
+  border: 2px solid #000000;
+  background: #000000;
+}
+}
+input:disabled {
+  color: #ff0000;
+}
+
+// miscellaneous stuff
+ul.pagination {
+list-style: none;
+    padding: 0 1em;
+  }
+ul.pagination a {
+  color: #000000;
+  text-decoration: none!important;
+}
+ul.pagination li {
+  display: inline-block;
+  font-size: 20pt;
+  border-bottom: 1px solid #0b0c0c;
+  margin: 16px;
+}
+//arrows

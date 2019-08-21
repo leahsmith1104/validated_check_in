@@ -1,0 +1,44 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l" id="result">
+      Thank you
+      </h1>
+      <p id="details">You're more than 30 minutes late for your appointment.</p>
+      <h2 class="govuk-heading-l">What to do next</h2>
+      <div class="width">
+        <p>If you're on Universal Credit:</p>
+        <ol class="govuk-list govuk-list--number">
+            <li>Sign into your account - you can use the computers here if you want.</li>
+            <li>Contact your work coach through your journal.</li>
+            <li>Rearrange your appointment with them.</li>
+        </ol>
+        <p>For everything else:</p>
+        <ol class="govuk-list govuk-list--number">
+            <li>Go to the welcome area and ask them to rearrange your appointment.</li>
+        </ol>
+        <div class="govuk-inset-text">
+      <p>Don't wait for your work coach to contact you. You can have money taken from any benefits you get
+        if you don't have a good reason for not keeping your appointments.</p>
+        </div>
+      <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
+      <script>
+      var found = getMeeting('{{ data['initial-first'] }}','{{ data['initial-last'] }}','{{ data['meeting'] }}');
+      if (found) {
+        document.getElementById('result').innerHTML = 'We think you are ' + found[0].firstName + " " + found[0].lastName;
+        document.getElementById('details').innerHTML = 'You are here to ' + found[0].workCoach + ' about ' + found[0].about;
+      }
+      </script>
+
+    </div>
+    {% include "includes/next-customer-button.html" %}
+  </div>
+
+{% endblock %}

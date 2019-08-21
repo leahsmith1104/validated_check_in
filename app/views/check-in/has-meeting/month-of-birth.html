@@ -1,0 +1,105 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Example - Passing data
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full fade">
+      <form action="date-of-birth" method="post" class="form" id="check-in_form">
+        <div class="govuk-form-group check-in-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-xl">
+                Which month is your birthday in?
+              </h1>
+            </legend>
+            <div id="radiosWrapper" class="check-in-radios--invisible fade">
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-jan" name="month" type="radio" value="January">
+                <label class="govuk-label check-in-radios__label delay" for="month-jan">
+                  Jan
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-feb" name="month" type="radio" value="February">
+                <label class="govuk-label check-in-radios__label delay" for="month-feb">
+                  Feb
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-mar" name="month" type="radio" value="March">
+                <label class="govuk-label check-in-radios__label delay" for="month-mar">
+                  Mar
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input month" id="month-apr" name="month" type="radio" value="April">
+                <label class="govuk-label check-in-radios__label delay" for="month-apr">
+                  Apr
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-may" name="month" type="radio" value="May">
+                <label class="govuk-label check-in-radios__label delay" for="month-may">
+                  May
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-jun" name="month" type="radio" value="June">
+                <label class="govuk-label check-in-radios__label delay" for="month-jun">
+                  Jun
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-jul" name="month" type="radio" value="July">
+                <label class="govuk-label check-in-radios__label delay" for="month-jul">
+                  Jul
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-aug" name="month" type="radio" value="August">
+                <label class="govuk-label check-in-radios__label delay" for="month-aug">
+                  Aug
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-sep" name="month" type="radio" value="September">
+                <label class="govuk-label check-in-radios__label delay" for="month-sep">
+                  Sep
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-oct" name="month" type="radio" value="October">
+                <label class="govuk-label check-in-radios__label delay" for="month-oct">
+                  Oct
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-nov" name="month" type="radio" value="November">
+                <label class="govuk-label check-in-radios__label delay" for="month-nov">
+                  Nov
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="month-dec" name="month" type="radio" value="December">
+                <label class="govuk-label check-in-radios__label delay" for="month-dec">
+                  Dec
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
+  <script>
+    var found = getMeeting(null, null, null);
+    if (found[0]) {
+      window.location.assign("check-in-success");
+    }
+  </script>
+{% endblock %}

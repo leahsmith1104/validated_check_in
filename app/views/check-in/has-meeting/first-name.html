@@ -1,0 +1,194 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  First name
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full fade">
+
+    <div class="buttons fade">
+      <div class="text-link--left">
+          <a href="/check-in" class="govuk-back-link">Back</a>
+      </div>
+      <div class="text-link--right">
+        <a href="/check-in" class="govuk-back-link no-arrow">Start again</a>
+      </div>
+    </div>
+
+      <form action="last-name" method="post" class="form" id="check-in_form">
+        <div class="govuk-form-group check-in-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-heading-xl">
+                What is the first letter of your first name?
+              </h1>
+            </legend>
+
+            <div id="radiosWrapper" class="check-in-radios--invisible fade">
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="A" name="initial-first" type="radio" value="A">
+                <label class="govuk-label check-in-radios__label delay" for="A">
+                  A
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="B" name="initial-first" type="radio" value="B">
+                <label class="govuk-label check-in-radios__label delay" for="B">
+                  B
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="C" name="initial-first" type="radio" value="C">
+                <label class="govuk-label check-in-radios__label delay" for="C">
+                  C
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="D" name="initial-first" type="radio" value="D">
+                <label class="govuk-label check-in-radios__label delay" for="D">
+                  D
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="E" name="initial-first" type="radio" value="E">
+                <label class="govuk-label check-in-radios__label delay" for="E">
+                  E
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="F" name="initial-first" type="radio" value="F">
+                <label class="govuk-label check-in-radios__label delay" for="F">
+                  F
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="G" name="initial-first" type="radio" value="G">
+                <label class="govuk-label check-in-radios__label delay" for="G">
+                  G
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="H" name="initial-first" type="radio" value="H">
+                <label class="govuk-label check-in-radios__label delay" for="H">
+                  H
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="I" name="initial-first" type="radio" value="I">
+                <label class="govuk-label check-in-radios__label delay" for="I">
+                  I
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="J" name="initial-first" type="radio" value="J">
+                <label class="govuk-label check-in-radios__label delay" for="J">
+                  J
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="K" name="initial-first" type="radio" value="K">
+                <label class="govuk-label check-in-radios__label delay" for="K">
+                  K
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="L" name="initial-first" type="radio" value="L">
+                <label class="govuk-label check-in-radios__label delay" for="L">
+                  L
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="M" name="initial-first" type="radio" value="M">
+                <label class="govuk-label check-in-radios__label delay" for="M">
+                  M
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="N" name="initial-first" type="radio" value="N">
+                <label class="govuk-label check-in-radios__label delay" for="N">
+                  N
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="O" name="initial-first" type="radio" value="O">
+                <label class="govuk-label check-in-radios__label delay" for="O">
+                  O
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="P" name="initial-first" type="radio" value="P">
+                <label class="govuk-label check-in-radios__label delay" for="P">
+                  P
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="Q" name="initial-first" type="radio" value="Q">
+                <label class="govuk-label check-in-radios__label delay" for="Q">
+                  Q
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="R" name="initial-first" type="radio" value="R">
+                <label class="govuk-label check-in-radios__label delay" for="R">
+                  R
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="S" name="initial-first" type="radio" value="S">
+                <label class="govuk-label check-in-radios__label delay" for="S">
+                  S
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="T" name="initial-first" type="radio" value="T">
+                <label class="govuk-label check-in-radios__label delay" for="T">
+                  T
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="U" name="initial-first" type="radio" value="U">
+                <label class="govuk-label check-in-radios__label delay" for="U">
+                  U
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="V" name="initial-first" type="radio" value="V">
+                <label class="govuk-label check-in-radios__label delay" for="V">
+                  V
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="W" name="initial-first" type="radio" value="W">
+                <label class="govuk-label check-in-radios__label delay" for="W">
+                  W
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="X" name="initial-first" type="radio" value="X">
+                <label class="govuk-label check-in-radios__label delay" for="X">
+                  X
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="Y" name="initial-first" type="radio" value="Y">
+                <label class="govuk-label check-in-radios__label delay" for="Y">
+                  Y
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-eigth">
+                <input class="govuk-radios__input" id="Z" name="initial-first" type="radio" value="Z">
+                <label class="govuk-label check-in-radios__label delay" for="Z">
+                  Z
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}

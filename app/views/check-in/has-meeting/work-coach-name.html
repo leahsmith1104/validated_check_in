@@ -1,0 +1,127 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Example - Passing data
+{% endblock %}
+
+{% block content %}
+<script>
+var now = new Date();
+var early = 30; //set desired time intervals here - the rest will be taken care of
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full fade">
+      <form action="coach-check" method="post" class="form" id="check-in_form">
+        <div class="govuk-form-group check-in-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-xl">
+                Do you know who your appointment<br /> is with?
+              </h1>
+            </legend>
+            <div id="radiosWrapper" class="check-in-radios--invisible fade">
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-1" name="coach" type="radio" value="Christine">
+                <label class="govuk-label check-in-radios__label delay" for="coach-1">
+                  Christine
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-2" name="coach" type="radio" value="Paul">
+                <label class="govuk-label check-in-radios__label delay" for="coach-2">
+                  Paul
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-3" name="coach" type="radio" value="Ian">
+                <label class="govuk-label check-in-radios__label delay" for="coach-3">
+                  Ian
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input coach" id="coach-4" name="coach" type="radio" value="Charlotte">
+                <label class="govuk-label check-in-radios__label delay" for="coach-4">
+                  Charlotte
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-5" name="coach" type="radio" value="Farhana">
+                <label class="govuk-label check-in-radios__label delay" for="coach-5">
+                  Farhana
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-6" name="coach" type="radio" value="Sonia">
+                <label class="govuk-label check-in-radios__label delay" for="coach-6">
+                  Sonia
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-7" name="coach" type="radio" value="Sam">
+                <label class="govuk-label check-in-radios__label delay" for="coach-7">
+                  Sam
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-8" name="coach" type="radio" value="Bev">
+                <label class="govuk-label check-in-radios__label delay" for="coach-8">
+                  Bev
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-9" name="coach" type="radio" value="Belinda">
+                <label class="govuk-label check-in-radios__label delay" for="coach-9">
+                  Belinda
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-10" name="coach" type="radio" value="Michael">
+                <label class="govuk-label check-in-radios__label delay" for="coach-10">
+                  Michael
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-11" name="coach" type="radio" value="NES">
+                <label class="govuk-label check-in-radios__label delay" for="coach-11">
+                  NCS
+                </label>
+              </div>
+              <div class="check-in-radios__item govuk-grid-column-one-quarter">
+                <input class="govuk-radios__input" id="coach-none" name="coach" type="radio" value="dunno">
+                <label class="govuk-label check-in-radios__label delay" for="coach-none">
+                  Don't know
+                </label>
+              </div>
+              {% include "includes/start-again-button.html" %}
+            </div>
+          </fieldset>
+        </div>
+        <p id="demo">{{data['meeting']}}</p>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
+  <script>
+    var found = getMeeting(null, null, null);
+    if (found[0]) {
+      window.location.assign("check-in-success");
+    }
+    var nowInMins = now.getHours() * 60 + now.getMinutes();
+    var meet = '{{ data['meeting'] }}';
+    var meetSplit = meet.split(':')
+    var meetMins = parseInt(meetSplit[1].substring(0, meetSplit[1].length - 2));
+    var meetInMins = meetSplit[0] * 60 + meetMins;
+    if (meetSplit[0] < 7) {
+      var meetInMins = meetInMins + 720;
+    }
+    var late = meetInMins + early;
+    if (nowInMins > late) {
+      window.location.assign("check-in-late");
+    }
+    var timeDiff = meetInMins - nowInMins;
+    if (timeDiff > early) {
+      window.location.assign("early-declaration");
+    }
+    document.getElementById("demo").innerHTML = nowInMins + "-" + meetInMins + " " + meet;
+  </script>
+{% endblock %}

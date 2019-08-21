@@ -1,0 +1,23 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  General welcome
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Welcome to Morley Jobcentre
+      </h1>
+      <p>If you need to talk to someone then wait on the ground floor and a staff member
+        will come to you when they can.</p>
+<form class="form" action="/check-in" method="post">
+<button class="govuk-button">Next customer</button>
+</form>
+    </div>
+  </div>
+
+{% endblock %}

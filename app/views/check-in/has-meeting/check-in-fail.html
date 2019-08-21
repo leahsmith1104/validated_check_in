@@ -1,0 +1,55 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l" id="result">
+        We can't find an appointment for you
+      </h1>
+      <p>Check your details and <a href="/check-in">try again</a> if they're wrong.</p>
+      <p>If you've entered the correct details and are sure you have a meeting today, speak to a member of staff.</p>
+      <h2 class="govuk-heading-l">What you entered</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Your initials
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['initial-first'] }} {{ data['initial-last'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Your appointment is with
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['coach'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your appointment time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['meeting'] }}
+          </dd>
+        </div>
+      </dl>
+      <a href="/check-in" class="govuk-button">Clear and start again</a>
+      <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
+      <script>
+      var found = getMeeting(null,null,null);
+      if (found[0]) {
+        window.location.assign("check-in-success");
+      }
+      </script>
+
+    </div>
+  </div>
+
+{% endblock %}

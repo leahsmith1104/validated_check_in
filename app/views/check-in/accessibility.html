@@ -1,0 +1,34 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l" id="result">
+        Help getting around
+      </h1>
+      <div class="width">
+      <p>We'll always try our best to make arrangements for you if you need:</p>
+     <ul class="govuk-list govuk-list--bullet">
+       <li>help with getting around the building</li>
+       <li>to be seen in a private room</li>
+       <li>to be seen on the ground floor</li>
+      </ul>
+      <p>We'll let your work coach know where you are.</p>
+      <h2 class="govuk-heading-l">What to do next</h2>
+      <ol class="govuk-list govuk-list--number">
+        <li>Go to the welcome desk.</li>
+        <li>Explain what you need.</li>
+      </ol>
+
+</div>
+      {% include "includes/next-customer-button.html" %}
+  </div>
+
+  <a href="check-in-fail" class="govuk-back-link fail">See a failed message</a>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Data cleared - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-m">
+    Data cleared
+  </h1>
+
+  <p>
+    The session data has been cleared.
+  </p>
+
+  <p>
+    <a href="/check-in">Start another check in with the latest version (default)</a>
+    | <a href="/check-in?green">Green buttons</a> | <a href="/check-in?white">White buttons</a>
+  </p>
+  <p>
+    <a href="/">
+      Go back to the protoype homepage
+    </a>
+  </p>
+
+{% endblock %}

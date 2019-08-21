@@ -1,0 +1,25 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  General welcome
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Welcome to our jobcentre
+      </h1>
+      <p>Visit GOV.UK to get advice on what benefits you could be entitled to and how
+        to apply for them.</p>
+      <p>There are computers available on the desks to your right that you can use for free.</p>
+      <p>If you need help using the computers ask a member of staff.<p>
+  <form class="form" action="/check-in" method="post">
+<button class="govuk-button">Next customer</button>
+</form>
+    </div>
+  </div>
+
+{% endblock %}

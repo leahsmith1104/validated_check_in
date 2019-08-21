@@ -1,0 +1,53 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l" id="result">
+        You're checked in
+      </h1>
+      <p>You have 30 minutes until your appointment at <script type="text/javascript">
+            var d = new Date();
+            d.setMinutes(d.getMinutes() + 30);
+            var hours = d.getHours();
+            var mins = d.getMinutes();
+            if (mins<10)
+            {
+              var mins = "0" + mins;
+            }
+            var thisTime = hours + ":" + mins + "am";
+            if (hours==12) // noon weirdness
+            {
+              var thisTime = hours + ":" + mins + "pm";
+            }
+            if (hours==00) // midnight weirdness - no meetings but hey
+            {
+              var thisTime = 12 + ":" + mins + "am";
+            }
+            if (hours>=13) // replace 24 hour clock
+            {
+              var thisTime = hours-12 + ":" + mins + "pm";
+            }
+            document.write(thisTime);
+            </script>.</p>
+      <h2 class="govuk-heading-l">What to do next</h2>
+      <div class="width">
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Go to the first floor at least 10 minutes before your appointment.</li>
+        <li>Take a seat on the blue sofas.</li>
+        <li>Listen for someone to call your name.</li>
+      </ol>
+      <p>You can use the public computers on the desks to the left on the ground floor while you wait. </p>
+      </div>
+      {% include "includes/next-customer-button.html" %}
+  </div>
+
+  <a href="check-in-fail" class="govuk-back-link fail">See a failed message</a>
+
+{% endblock %}
