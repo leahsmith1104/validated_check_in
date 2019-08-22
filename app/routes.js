@@ -14,7 +14,7 @@ router.post('/check-in/hasMeeting', function (req, res) {
   if (hasMeeting === 'false') {
     res.redirect('/check-in/no-meeting')
   } else {
-    res.redirect('/check-in/has-meeting/first-name')
+    res.redirect('/check-in/has-meeting/meeting-time')
   }
 })
 
@@ -26,7 +26,7 @@ router.post('/check-in/enquiryType', function (req, res) {
   let enquiryType = req.session.data['enquiry']
 
   if (enquiryType === 'meeting') {
-    res.redirect('/check-in/has-meeting/first-name')
+    res.redirect('/check-in/has-meeting/meeting-time')
   }
   if (enquiryType === 'facilities') {
     res.redirect('/check-in/facilities')
