@@ -8,16 +8,17 @@ Check your answers
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full" style="text-align: left;">
       <h1 class="govuk-heading-xl" id="result">
-        Sorry, there's a problem
+        There's a problem
       </h1>
-      <p id="details" class="govuk-heading-m">We can't find your appointment.</p>
-      <p>If you're sure you have an appointment here today then ask a member of staff for help. They will let you know what to do next.</p>
-      <div class="govuk-inset-text">
-          <p>Please don't leave without talking to a member of staff. It can affect your benefits if you miss an
-            an appointment without letting someone know.</p>
-      </div>
-    </div>
-    {% include "includes/next-customer-button.html" %}
+      <p id="details" class="govuk-heading-m">Sorry, we can't check you in for your appointment right now.</p>
+      <p>This doesn't mean your appointment has been cancelled.</p>
+      <h2 class="govuk-heading-m">What to do next</h2>
+      <ol class="govuk-list govuk-list--number">
+              <li>Double check you are in the right jobcentre and that your meeting is today.</li>
+            <li>Ask a member of staff for help, they should be able to find your appointment manually.</li>
+        </ol>
+      {% include "includes/warning-dont-leave.html" %}
+      {% include "includes/next-customer-button.html" %}
   </div>
   <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
 {% endblock %}

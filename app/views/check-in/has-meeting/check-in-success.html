@@ -13,23 +13,26 @@ var now = new Date();
       <h1 class="govuk-heading-xl" id="result">
         Thank you
       </h1>
-      <p id="details" class="govuk-heading-m">We've told your work coach you are here.</p>
-      <p>Please don't leave the job centre before your appointment, without informing a member of staff.</p>
+      <p id="details" class="govuk-heading-m">We've told the person you're seeing that you're here.</p>
+      <p>Please don't leave the job centre before your appointment without telling a member of staff.</p>
       <h2 class="govuk-heading-m">What to do next</h2>
       <div class="width" style="width: 90%;">
+        <h3 class="govuk-heading-s">For regular Universal Credit (UC) work coach meetings</h3>
         <ol class="govuk-list govuk-list--number">
-        <li>Press the finish button below.</li>
-        <li>Take a seat on the sofas.</li>
-        <li>Listen for someone to call your name.</li>
+        <li>Go upstairs and take a seat.  </li>
+      <li>Listen for someone to call your name.</li>
       </ol>
+      <h3 class="govuk-heading-s">For other benefits and inital UC application interviews</h3>
+      <ol class="govuk-list govuk-list--number">
+      <li>Take a seat on the ground floor.  </li>
+    <li>Listen for someone to call your name.</li>
+    </ol>
       </div>
       <div class="govuk-inset-text">
-          <p>If you are early and you feel like you need to be seen before your appointment time, please notify a member of staff.</p>
+          <p>If you're early and really need to be seen before your appointment time, talk to a member of staff.</p>
       </div>
-      
     </div>
     {% include "includes/next-customer-button.html" %}
-    <a href="/check-in/has-meeting/check-in-fail" class="govuk-button  govuk-button--warning">Fail screen</a>
   </div>
   <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
 {% endblock %}
