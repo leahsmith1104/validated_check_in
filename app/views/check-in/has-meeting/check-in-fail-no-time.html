@@ -1,0 +1,25 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Check in failed
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds" style="text-align: left;">
+    <h1 class="govuk-heading-xl" id="result">
+      Thank you
+    </h1>
+    <p id="details" class="govuk-heading-m">Sorry, you can't check in here without your appointment time.</p>
+    <h2 class="govuk-heading-m">What to do next</h2>
+    <ol class="govuk-list govuk-list--number">
+            <li>Check you are in the right job centre and that your appointment is for today.</li>
+          <li>Ask a member of staff for help, they should be able to check you in.</li>
+      </ol>
+      {% include "includes/warning-dont-leave.html" %}
+    {% include "includes/next-customer-button.html" %}
+  </div>
+
+</div>
+
+{% endblock %}
