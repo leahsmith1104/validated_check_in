@@ -1,0 +1,38 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl" id="result">
+        Confirm your appointment details
+      </h1>
+      <p></p>
+      <dl class="govuk-summary-list" style="margin-bottom: 60px;">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Your full name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            David Smith
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your appointment time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['meeting'] }}
+          </dd>
+        </div>
+      </dl>
+      <a href="/check-in/has-meeting/check-in-success" class="govuk-button">Confirm</a>
+      <a href="/check-in/has-meeting/meeting-time" class="govuk-button govuk-button--warning">Try again</a>
+    </div>
+  </div>
+
+{% endblock %}
