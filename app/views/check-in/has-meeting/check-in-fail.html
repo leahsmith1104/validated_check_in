@@ -10,14 +10,29 @@ Check in failed
       <h1 class="govuk-heading-xl" id="result">
         There's a problem
       </h1>
-      <p id="details" class="govuk-heading-m">Sorry, we can't check you in for your appointment.</p>
-      <p>This doesn't mean your appointment has been cancelled.</p>
-      <h2 class="govuk-heading-m">What to do next</h2>
-      <ol class="govuk-list govuk-list--number">
-              <li>Double check you are in the right jobcentre and that your appointment is today.</li>
-            <li>Ask a member of staff for help, they should be able to find your appointment manually.</li>
-        </ol>
+      <p id="details" class="govuk-heading-m">We can't find an appointment using these details.
+      <h2 class="govuk-heading-m">What you entered</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Your initials
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['initial-first'] }} {{ data['initial-last'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Your appointment time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['meeting'] }}
+          </dd>
+        </div>
+      </dl>
+      </div>
       {% include "includes/warning-dont-leave.html" %}
+      <a href="/check-in" class="govuk-button govuk-button--secondary">Try again</a>
       {% include "includes/next-customer-button.html" %}
   </div>
   <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>

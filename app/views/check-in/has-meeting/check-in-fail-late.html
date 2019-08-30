@@ -1,0 +1,27 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds" style="text-align: left;">
+    <h1 class="govuk-heading-xl" id="result">
+      Thank you
+    </h1>
+    <p id="details" class="govuk-heading-m">Sorry, we can't check you in as you're late for your appointment.</p>
+    <p>This doesn't mean your appointment has been cancelled.</p>
+    <h2 class="govuk-heading-m">What to do next</h2>
+    <ol class="govuk-list govuk-list--number">
+            <li>Talk to a member of staff.</li>
+          <li>Explain you are late for your appointment.</li>
+          <li>They will let you know if you can be seen today or whether you have to make another appointment.</li>
+      </ol>
+      {% include "includes/warning-dont-leave.html" %}
+    {% include "includes/next-customer-button.html" %}
+  </div>
+
+</div>
+
+{% endblock %}
