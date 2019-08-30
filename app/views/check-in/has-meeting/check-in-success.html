@@ -6,7 +6,8 @@ Check in confirmed
 {% block content %}
 <script>
 var now = new Date();
-var early = 60; //set desired early time in minutes here to direct user to different message for early arrivals
+var early = 60; // time in minutes here to direct users arriving this long before their meeting start time to a custom message
+var lateTolerance = 0; // time in minutes here to direct users arriving this long after their meeting start time to a custom message
 </script>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full" style="text-align: left;">
@@ -20,13 +21,11 @@ var early = 60; //set desired early time in minutes here to direct user to diffe
       <li>Take a seat on the blue sofas on the ground floor.</li>
     <li>Listen for someone to call your name.</li>
     </ol>
-      </div>
       <div class="govuk-inset-text">
           <p>If you're early and really need to be seen before your appointment time, talk to a member of staff.</p>
       </div>
-      <p id="demo"></p>
-    </div>
     {% include "includes/next-customer-button.html" %}
+    </div>
   </div>
   <script>
     var nowInMins = now.getHours() * 60 + now.getMinutes();
@@ -37,7 +36,7 @@ var early = 60; //set desired early time in minutes here to direct user to diffe
     if (meetSplit[0] < 7) {
       var meetInMins = meetInMins + 720;
     }
-    var late = meetInMins + early;
+    var late = meetInMins + lateTolerance;
     if (nowInMins > late) {
       window.location.assign("check-in-fail-late");
     }
