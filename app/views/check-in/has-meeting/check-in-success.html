@@ -3,36 +3,47 @@
 {% block pageTitle %}
 Check in confirmed
 {% endblock %}
-
 {% block content %}
 <script>
 var now = new Date();
+var early = 60; //set desired early time in minutes here to direct user to different message for early arrivals
 </script>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full" style="text-align: left;">
       <h1 class="govuk-heading-xl" id="result">
         Thank you
       </h1>
-      <p id="details" class="govuk-heading-m">Our staff know that you're here.</p>
+      <p id="details" class="govuk-heading-m">We've let your work coach know that you're here.</p>
       <p>Please don't leave the job centre before your appointment without telling a member of staff.</p>
       <h2 class="govuk-heading-m">What to do next</h2>
-      <div class="width" style="width: 90%;">
-        <h3 class="govuk-heading-s">For regular Universal Credit (UC) work coach meetings</h3>
-        <ol class="govuk-list govuk-list--number">
-        <li>Go upstairs and take a seat.  </li>
-      <li>Listen for someone to call your name.</li>
-      </ol>
-      <h3 class="govuk-heading-s">For other benefits and inital UC application interviews</h3>
       <ol class="govuk-list govuk-list--number">
-      <li>Take a seat on the ground floor.  </li>
+      <li>Take a seat on the blue sofas on the ground floor.</li>
     <li>Listen for someone to call your name.</li>
     </ol>
       </div>
       <div class="govuk-inset-text">
           <p>If you're early and really need to be seen before your appointment time, talk to a member of staff.</p>
       </div>
+      <p id="demo"></p>
     </div>
     {% include "includes/next-customer-button.html" %}
   </div>
-  <script type="text/javascript" src="/public/javascripts/meetingsLookup.js"></script>
+  <script>
+    var nowInMins = now.getHours() * 60 + now.getMinutes();
+    var meet = '{{ data['meeting'] }}';
+    var meetSplit = meet.split(':')
+    var meetMins = parseInt(meetSplit[1].substring(0, meetSplit[1].length - 2));
+    var meetInMins = meetSplit[0] * 60 + meetMins;
+    if (meetSplit[0] < 7) {
+      var meetInMins = meetInMins + 720;
+    }
+    var late = meetInMins + early;
+    if (nowInMins > late) {
+      window.location.assign("check-in-fail-late");
+    }
+    var timeDiff = meetInMins - nowInMins;
+    if (timeDiff > early) {
+      window.location.assign("check-in-success-early");
+    }
+  </script>
 {% endblock %}
