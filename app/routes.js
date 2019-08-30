@@ -18,6 +18,17 @@ router.post('/check-in/hasMeeting', function (req, res) {
   }
 })
 
+router.post('/check-in/has-meeting/meeting-time-check', function (req, res) {
+
+  let selectedTime = req.session.data['meeting']
+
+  if (selectedTime === 'Not given') {
+    res.redirect('check-in-fail-no-time')
+  } else {
+    res.redirect('first-name')
+  }
+})
+
 router.post('/check-in/enquiryType', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
